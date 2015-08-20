@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Drivers</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Delete</th>
+            </tr>
+            {{#teams}}
+                <tr>
+                    <td>{{team_name}}</td>
+                    <td><a href="/teams/{{id}}/delete">Delete</a></td>
+                </tr>
+            {{/teams}}
+        </table>
+    </div>
+    <div class="col-md-4">
+        <form action="/teams/create" method="post">
+            <div class="form-group">
+                <label for="team_name">Name</label>
+                <input type="text" name="team_name" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="/drivers">Drivers</a></li>
+        <li role="presentation"><a href="/teams">Teams</a></li>
+        <li role="presentation"><a href="/countries">Countries</a></li>
+        <li role="presentation" class="active"><a href="/tracks">Tracks</a></li>
+        <li role="presentation"><a href="/races">Races</a></li>
+        <li role="presentation"><a href="/driver_standings">Standings</a></li>
+    </ul>
+    <h2>Tracks</h2>
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <td>Country</th>
+                <th>Delete</th>
+            </tr>
+            {{#tracks}}
+                <tr>
+                    <td>{{track_name}}</td>
+                    <td>{{country_name}}</td>
+                    <td><a href="tracks/{{id}}/delete">Delete</a></td>
+                </tr>
+            {{/tracks}}
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h4>Add new track:</h4>
+        <form action="tracks/create" method="post">
+            <div class="form-group">
+                <label for="track_name">Name</label>
+                <input type="text" name="track_name" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="country_id">Country</label>
+                <select name="country_id" id="country_id" class="form-control">
+                    {{#countries}}
+                        <option value="{{id}}">{{country_name}}</option>
+                    {{/countries}}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Drivers</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Drivers</h2>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>Team</th>
+                    <th>Country</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    {{#drivers}}
+                        <tr>
+                            <td>{{driver_number}}</td>
+                            <td>{{driver_name}}</td>
+                            <td>{{team_name}}</td>
+                            <td>{{country_name}}</td>
+                            <td><a href="/drivers/{{id}}/edit">Edit</a></td>
+                            <td><a href="/drivers/{{id}}/delete">Delete</a></td>
+                        </tr>
+                    {{/drivers}}
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
