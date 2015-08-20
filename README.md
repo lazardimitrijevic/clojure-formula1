@@ -1,14 +1,14 @@
-# formula
+# Formula1 Web Application
 
-A Clojure library designed to ... well, that part is up to you.
+A simple clojure web application for managing drivers, teams, races and other formula1 copmponents.
 
-## Usage
+## Running
 
-FIXME
+Starting web server for the application with command(from command line): lein ring server-headless.
 
 ## License
 
-Copyright © 2015 FIXME
+Copyright © 2015 Lazar Dimitrijevic
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
