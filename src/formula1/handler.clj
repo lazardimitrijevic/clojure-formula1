@@ -18,6 +18,7 @@
 ;  (println x "Hello, World!"))
 
 (defroutes public-routes
+  (GET "/" [] (controller/index))
   (GET "/drivers" [] (controller/drivers))
   (route/resources "/")
   (GET "/drivers/new" [] (controller/new))
