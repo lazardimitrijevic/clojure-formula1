@@ -17,6 +17,9 @@
 (defn drivers []
   (render-template "drivers" {:drivers (drivers/all)}))
 
+(defn index []
+  (render-template "index" {}))
+
 (defn new []
   (render-template "new_driver" {:teams (teams/all)
                                  :countries (countries/all)}))
